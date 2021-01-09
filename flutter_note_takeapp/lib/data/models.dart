@@ -7,7 +7,15 @@ class NotesModel {
   bool isImportant;
   DateTime date;
 
+  NotesModel({this.id, this.title, this.content, this.isImportant, this.date});
 
+  NotesModel.fromMap(Map<String, dynamic> map) {
+    this.id = map['_id'];
+    this.title = map['title'];
+    this.content = map['content'];
+    this.date = DateTime.parse(map['date']);
+    this.isImportant = map['isImportant'] == 1 ? true : false;
+  }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -17,15 +25,6 @@ class NotesModel {
       'isImportant': this.isImportant == true ? 1 : 0,
       'date': this.date.toIso8601String()
     };
-  }
-  NotesModel({this.id, this.title, this.content, this.isImportant, this.date});
-
-  NotesModel.fromMap(Map<String, dynamic> map) {
-    this.id = map['_id'];
-    this.title = map['title'];
-    this.content = map['content'];
-    this.date = DateTime.parse(map['date']);
-    this.isImportant = map['isImportant'] == 1 ? true : false;
   }
 
   NotesModel.random() {
