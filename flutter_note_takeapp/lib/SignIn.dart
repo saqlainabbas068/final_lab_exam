@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'Register.dart';
+import 'SignUp.dart';
 import 'mainPage.dart';
 import 'notesmain.dart';
 
